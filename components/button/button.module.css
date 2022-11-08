@@ -7,6 +7,8 @@
   color: var(--shadow-light-color);
   cursor: pointer;
   transition: all 0.2s ease-in;
+  box-shadow: var(--box-shadow);
+  box-shadow: 7px 8px 18px #50c7cb;
 }
 .button:hover {
   background-color: var(--main-bg-color);
