@@ -4,4 +4,5 @@ import NavBar from "./navBar/navbar";
 import HeroSection from "./HeroSection/HeroSection";
 import Services from "./Service/Service";
 import BigNFTSilder from "./BigNFTSilder/BigNFTSilder";
-export {Button, Footer, NavBar, HeroSection, Services, BigNFTSilder};
+import Subscribe from "./Subscribe/Subscribe";
+export {Button, Footer, NavBar, HeroSection, Services, BigNFTSilder,Subscribe};
