@@ -68,6 +68,7 @@ export const Footer = () => {
             <p>
               Discover, collect, and sell extraordinary NFTs OpenSea is the
               world first and largest NFT marketplace
+              {console.log("check")}
             </p>
           </div>
         </div>
