@@ -12,7 +12,7 @@ const Notification = () => {
       <div className={Style.notification_box}>
         <div className={Style.notification_box_img}>
           <Image
-            src={images.user1}
+            src={images.sam}
             alt="profile image"
             width={50}
             height={50}

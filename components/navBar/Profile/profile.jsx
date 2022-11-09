@@ -14,7 +14,7 @@ const Profile = () => {
     <div className={Style.profile}>
       <div className={Style.profile_account}>
         <Image
-          src={images.user1}
+          src={images.sam}
           alt="user profile"
           width={50}
           height={50}

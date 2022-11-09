@@ -20,6 +20,7 @@ import user7 from "./user-7.png";
 import user8 from "./user-8.png";
 import user9 from "./user-9.png";
 import user10 from "./user-10.png";
+import sam from "./sam.jpeg";
 import service1 from "./service-1.png";
 import service2 from "./service-2.png";
 import service3 from "./service-3.png";
@@ -31,6 +32,7 @@ import twitter from "./twitter.svg";
 import telegram from "./telegram.svg";
 import youtube from "./youtube.svg";
 import vitverselogo from "./vitverselogo.png";
+import vlogo from "./vlogo.png";
 import vimeo from "./vimeo.svg";
 import vector from "./VectorHIW.svg";
 import zgcmq from "./zgcmq.svg";
@@ -74,6 +76,7 @@ export default {
   user8,
   user9,
   user10,
+  sam,
   service1,
   service2,
   service3,
@@ -86,6 +89,7 @@ export default {
   vector,
   vimeo,
   vitverselogo,
+  vlogo,
   youtube,
   zgcmq,
 };

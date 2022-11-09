@@ -19,7 +19,7 @@ export const Footer = () => {
       <div className={Style.footer}>
       <div className={Style.footer_box}>
         <div className={Style.footer_box_social}>
-          <Image src={images.vitverselogo} alt="footer logo" height={100} width={100} />
+          <Image src={images.vlogo} alt="footer logo" height={110} width={200} />
           <a href="/">
           </a>
           <p>
