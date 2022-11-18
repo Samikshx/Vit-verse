@@ -43,7 +43,13 @@ import nft_image_1 from "./nft-image-1.png";
 import nft_image_2 from "./nft-image-2.png";
 import nft_image_3 from "./nft-image-3.png";
 import musiceWave from "./musicwave.png";
+import demon from "./demon.png"
 import update from "./update.png";
+import upload from "./upload.png";
+import provider1 from "./provider-1.png";
+import provider2 from "./provider-2.svg";
+import provider3 from "./provider-3.png";
+import provider4 from "./provider-4.JPG";
 
 export default {
   collection,
@@ -66,6 +72,7 @@ export default {
   creatorbackground9,
   creatorbackground10,
   creatorbackground11,
+  demon,
   user1,
   user2,
   user3,
@@ -92,4 +99,9 @@ export default {
   vlogo,
   youtube,
   zgcmq,
+  upload,
+  provider1,
+  provider2,
+  provider3,
+  provider4,
 };

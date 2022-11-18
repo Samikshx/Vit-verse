@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useContext} from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -13,6 +13,7 @@ import {Discover, Helpcenter,Profile,Sidebar, Notification} from './index';
 import {Button} from "../comp_index";
 import images from '../../img';
 
+import { NFTMarketplaceContext } from '../../Context/NFTMarketplaceContext';
 
 const NavBar = () => {
   //usestate
@@ -77,6 +78,8 @@ const NavBar = () => {
     }
   };
   
+  const  {currentAccount, connectWallet} = useContext(NFTMarketplaceContext);
+
   return (
     <div className= {Style.navbar}>
       <div className={Style.navbar_container}>
@@ -120,7 +123,13 @@ const NavBar = () => {
 
           {/* CREATE BUTTON SECTION */}
           <div className={Style.navbar_container_right_button}>
-            <Button btnName= "Create" handleClick={()=>{}}/>
+            {currentAccount == "" ? (
+              <Button btnName="Connect" handleClick={() => connectWallet()} />
+            ) : (
+              <a href={{pathname: "/"}}>
+              <Button btnName="Create" handleClick={()=>{}}/></a>
+              
+            )}
           </div>
 
           {/* USER PROFILE */}
