@@ -31,8 +31,8 @@ import facebook from "./facebook.svg";
 import twitter from "./twitter.svg";
 import telegram from "./telegram.svg";
 import youtube from "./youtube.svg";
-import vitverselogo from "./vitverselogo.png";
-import vlogo from "./vlogo.png";
+// import vitverselogo from "./vitverselogo.png";
+// import vlogo from "./vlogo.png";
 import vimeo from "./vimeo.svg";
 import vector from "./VectorHIW.svg";
 import zgcmq from "./zgcmq.svg";
@@ -50,7 +50,11 @@ import provider1 from "./provider-1.png";
 import provider2 from "./provider-2.svg";
 import provider3 from "./provider-3.png";
 import provider4 from "./provider-4.JPG";
-
+import earn from "./eran.png";
+import hero2 from "./hero2.png";
+import vitverse from "./vitverse.png";
+import vitverse2 from "./vitverse2.png";
+import cart from "./logocart-removebg-preview.png";
 export default {
   collection,
   update,
@@ -83,6 +87,7 @@ export default {
   user8,
   user9,
   user10,
+  cart,
   sam,
   service1,
   service2,
@@ -95,8 +100,8 @@ export default {
   twitter,
   vector,
   vimeo,
-  vitverselogo,
-  vlogo,
+  // vitverselogo,
+  // vlogo,
   youtube,
   zgcmq,
   upload,
@@ -104,4 +109,8 @@ export default {
   provider2,
   provider3,
   provider4,
+  earn,
+  hero2,
+  vitverse,
+  vitverse2,
 };

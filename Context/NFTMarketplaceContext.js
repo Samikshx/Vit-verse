@@ -5,24 +5,24 @@ import { useRouter } from "next/router";
 import axios from "axios";
 import { create as ipfsHttpClient } from "ipfs-http-client";
 
-const client = ipfsHttpClient("https://ipfs.infura.io:5001/api/v0");
+// const client = ipfsHttpClient("https://ipfs.infura.io:5001/api/v0");
 
-// const projectId = process.env.PROJECT_ID;
-// const projectSecretKey = process.env.PROJECT_SECRET_KEY;
-// const auth = `Basic ${Buffer.from(`${projectId}:${projectSecretKey}`).toString(
-//   "base64"
-// )}`;
+const projectId = process.env.NEXT_PUBLIC_PROJECT_ID;
+const projectSecretKey = process.env.NEXT_PUBLIC_SECRET_KEY;
+const auth = `Basic ${Buffer.from(`${projectId}:${projectSecretKey}`).toString(
+  "base64"
+)}`;
 
-// const subdomain = process.env.SUBDOMAIN;
+const subdomain = process.env.NEXT_PUBLIC_SUBDOMAIN;
 
-// const client = ipfsHttpClient({
-//   host: "infura-ipfs.io",
-//   port: 5001,
-//   protocol: "https",
-//   headers: {
-//     authorization: auth,
-//   },
-// });
+const client = ipfsHttpClient({
+  host: "infura-ipfs.io",
+  port: 5001,
+  protocol: "https",
+  headers: {
+    authorization: auth,
+  },
+});
 
 // //INTERNAL  IMPORT
 import {
@@ -60,12 +60,12 @@ const connectingWithSmartContract = async () => {
 
 // const connectToTransferFunds = async () => {
 //   try {
-//     // const web3Modal = new Wenb3Modal();
-//     // const connection = await web3Modal.connect();
-//     // const provider = new ethers.providers.Web3Provider(connection);
-//     const provider = new ethers.providers.JsonRpcProvider(
-//       "https://goerli.infura.io/v3/22e93319c7504d95a136f7c2c31714b4"
-//     );
+//     const web3Modal = new Wenb3Modal();
+//     const connection = await web3Modal.connect();
+//     const provider = new ethers.providers.Web3Provider(connection);
+//     // const provider = new ethers.providers.JsonRpcProvider(
+//     //   "https://goerli.infura.io/v3/22e93319c7504d95a136f7c2c31714b4"
+//     // );
 //     const signer = provider.getSigner();
 //     const contract = fetchTransferFundsContract(signer);
 //     return contract;
@@ -134,7 +134,7 @@ const checkIfWalletConnected = async () => {
         method: "eth_requestAccounts",
       });
       setCurrentAccount(accounts[0]);
-      window.location.reload();
+      // window.location.reload();
     } catch (error) {
     //   setError("Error while connecting to wallet");
     //   setOpenError(true);
@@ -146,22 +146,21 @@ const checkIfWalletConnected = async () => {
   const uploadToIPFS = async (file) => {
     try {
       const added = await client.add({ content: file });
-    //   const url = `${subdomain}/ipfs/${added.path}`;
-    const url = 'https://ipfs.infura.io/ipfs/${added.path}';
+      const url = `${subdomain}/ipfs/${added.path}`;
       return url;
     } catch (error) {
-      setError("Error Uploading to IPFS");
-      setOpenError(true);
+      console.log("Error Uploading to IPFG",error);
+      // setError("Error Uploading to IPFS");
+      // setOpenError(true);
     }
   };
 
 //   //---CREATENFT FUNCTION
-  const createNFT = async (formInput,fileUrl, router) => {
-        const {name,description,price} = formInput;
+  const createNFT = async (name,price,image,description, router) => {
         if (!name || !description || !price || !image)
     //   return setError("Data Is Missing"), setOpenError(true);
         return console.log("Data is missing");
-      const data = JSON.stringify({ name, description, image:fileUrl });
+      const data = JSON.stringify({ name, description, image });
       
       try{
         const added = await client.add(data);
@@ -170,7 +169,7 @@ const checkIfWalletConnected = async () => {
         await createSale(url, price);
       }
       
-    //   router.push("/searchPage");
+    
      catch (error) {
     //   setError("Error while creating NFT");
     //   setOpenError(true);
@@ -197,10 +196,11 @@ const checkIfWalletConnected = async () => {
           });
 
       await transaction.wait();
-      console.log(transaction);
+      router.push("/searchPage");
+      // console.log(transaction);
     } catch (error) {
-      setError("error while creating sale");
-      setOpenError(true);
+      // setError("error while creating sale");
+      // setOpenError(true);
       console.log(error);
     }
   };
@@ -210,10 +210,8 @@ const checkIfWalletConnected = async () => {
   const fetchNFTs = async () => {
     try {
       if (currentAccount) {
-        const provider = new ethers.providers.JsonRpcProvider(
-        //   process.env.POLYGON_MUMBAI
-        );
-        console.log(provider);
+        const provider = new ethers.providers.JsonRpcProvider();
+        // console.log(provider);
         const contract = fetchContract(provider);
 
         const data = await contract.fetchMarketItems();
@@ -249,8 +247,8 @@ const checkIfWalletConnected = async () => {
         return items;
       }
     } catch (error) {
-      setError("Error while fetching NFTS");
-      setOpenError(true);
+      // setError("Error while fetching NFTS");
+      // setOpenError(true);
       console.log(error);
     }
   };
@@ -336,16 +334,8 @@ return(
 };
 
 
-
-
-
-
-
-
-
-
-//   //------------------------------------------------------------------
-//   //---TRANSFER FUNDS
+  //------------------------------------------------------------------
+  //---TRANSFER FUNDS
 //   const [transactionCount, setTransactionCount] = useState("");
 //   const [transactions, setTransactions] = useState([]);
 //   const [loading, setLoading] = useState(false);

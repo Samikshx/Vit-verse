@@ -18,7 +18,7 @@ import Style from "./sidebar.module.css";
 import images from "../../../img";
 import Button from "../../button/button";
 
-const Sidebar = ({ setOpenSideMenu }) => {
+const Sidebar = ({ setOpenSideMenu,currentAccount, connectWallet }) => {
   //------USESTATE
   const [openDiscover, setOpenDiscover] = useState(false);
   const [openHelp, setOpenHelp] = useState(false);
@@ -178,10 +178,10 @@ const Sidebar = ({ setOpenSideMenu }) => {
       </div>
 
       <div className={Style.sideBar_button}>
-        <Button btnName="Create" handleClick={()=> {}}/>
-        <Button btnName="COnnect wallet" handleClick={()=>{}}/>
+        {/* <Button btnName="Create" handleClick={()=> {}}/>
+        <Button btnName="COnnect wallet" handleClick={()=>{}}/> */}
 
-        {/* {currentAccount == "" ? (
+        {currentAccount == "" ? (
           <Button btnName="connect" handleClick={() => connectWallet()} />
         ) : (
           <Button
@@ -190,7 +190,7 @@ const Sidebar = ({ setOpenSideMenu }) => {
           />
         )}
 
-        <Button btnName="Connect Wallet" handleClick={() => {}} /> */}
+        <Button btnName="Connect Wallet" handleClick={() => {}} />
       </div>
     </div>
   );

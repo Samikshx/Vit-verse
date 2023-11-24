@@ -12,4 +12,5 @@ import NFTcard from "./NFTcard/NFTcard";
 import Collection from "./Collection/Collection";
 import DayComponents from "./Collection/DayComponents/DayComponents";
 import FollowerTab from "./FollowerTab/FollowerTab";
-export {Button, Footer, NavBar, HeroSection, Services, BigNFTSilder,Subscribe, Title, Category, Filter, NFTcard, Collection,DayComponents, FollowerTab};
+import Brand from "./Brand/Brand";
+export {Button, Footer, NavBar, HeroSection, Services, BigNFTSilder,Subscribe, Title, Category, Filter, NFTcard, Collection,DayComponents, FollowerTab,Brand};

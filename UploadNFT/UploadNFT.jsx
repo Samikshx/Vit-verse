@@ -10,10 +10,10 @@ import { useRouter } from "next/router";
 import Style from "./Upload.module.css";
 import formStyle from "../AccountPage/Form/Form.module.css";
 import images from "../img";
-import { Button } from "../components/comp_index";
+import { Button } from "../components/comp_index.js";
 import { DropZone } from "../UploadNFT/uploadNFTIndex.js";
 
-const UloadNFT = ({ uploadToIPFS, createNFT }) => {
+const UploadNFT = ({ uploadToIPFS, createNFT }) => {
   const [price, setPrice] = useState("");
   const [active, setActive] = useState(0);
   const [name, setName] = useState("");
@@ -68,8 +68,8 @@ const UloadNFT = ({ uploadToIPFS, createNFT }) => {
         category={category}
         properties={properties}
         image={images.upload}
-        // setImage={setImage}
-        // uploadToIPFS={uploadToIPFS}
+        setImage={setImage}
+        uploadToIPFS={uploadToIPFS}
       />
 
       <div className={Style.upload_box}>
@@ -220,7 +220,7 @@ const UloadNFT = ({ uploadToIPFS, createNFT }) => {
                 price,
                 image,
                 description,
-                router
+                router,
                 // website,
                 // royalties,
                 // fileSize,
@@ -241,4 +241,4 @@ const UloadNFT = ({ uploadToIPFS, createNFT }) => {
   );
 };
 
-export default UloadNFT;
+export default UploadNFT;

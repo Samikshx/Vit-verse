@@ -17,9 +17,7 @@ const NFTCard = () => {
     images.nft_image_1,
     images.nft_image_2,
     images.nft_image_3,
-    images.nft_image_1,
-    images.nft_image_2,
-    images.nft_image_3,
+    
   ];
 
   const [like, setLike] = useState(true);

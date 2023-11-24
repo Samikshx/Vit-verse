@@ -85,7 +85,7 @@ const NavBar = () => {
       <div className={Style.navbar_container}>
         <div className ={Style.navbar_container_left}>
           <div className ={Style.logo}>
-            <Image src= {images.vitverselogo} alt="NFT MARKETPLACE" width ={140} height={100}/>
+            <Image src= {images.vitverse} alt="NFT MARKETPLACE" width ={150} height={80}/>
           </div>
           <div className={Style.navbar_container_left_box_input}>
             <div className = {Style.navbar_conatiner_left_box_input_box}>
@@ -126,9 +126,9 @@ const NavBar = () => {
             {currentAccount == "" ? (
               <Button btnName="Connect" handleClick={() => connectWallet()} />
             ) : (
-              <a href={{pathname: "/"}}>
-              <Button btnName="Create" handleClick={()=>{}}/></a>
-              
+              <Link  href={{pathname: "/uploadNFT"}}>
+              <Button btnName="Create" handleClick={()=>{}}/>
+              </Link>
             )}
           </div>
 
@@ -155,6 +155,8 @@ const NavBar = () => {
         <div className={Style.sideBar}>
           <Sidebar
             setOpenSideMenu={setOpenSideMenu}
+            currentAccount={currentAccount}
+            connectWallet={connectWallet}
           />
         </div>
       )}

@@ -40,14 +40,6 @@ const Collection = () => {
       background: images.creatorbackground6,
       user: images.user6,
     },
-    {
-      background: images.creatorbackground7,
-      user: images.user7,
-    },
-    {
-      background: images.creatorbackground8,
-      user: images.user8,
-    },
   ];
   const newsArray = [
     {
@@ -100,14 +92,7 @@ const Collection = () => {
       background: images.creatorbackground6,
       user: images.user6,
     },
-    {
-      background: images.creatorbackground7,
-      user: images.user7,
-    },
-    {
-      background: images.creatorbackground8,
-      user: images.sam,
-    },
+    
   ];
 
   const openPopular = () => {
